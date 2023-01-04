@@ -30,7 +30,7 @@ const TabbedSection = ({ experiences }: TabbedSectionType) => {
         })}
       </div>
       <div className="w-full md:w-1/2">
-        <TabDetailSection details={experiences[currentIndex]} />
+        <TabDetailSection details={experiences && experiences[currentIndex]} />
       </div>
     </div>
   );
