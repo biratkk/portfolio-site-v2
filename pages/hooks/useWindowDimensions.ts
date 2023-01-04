@@ -5,16 +5,15 @@ type WindowDimensionType = {
     height: number;
 }
 
-const getWindowDimensions = (): WindowDimensionType => {
-    const { innerWidth: width, innerHeight: height } = window;
-    return {
-        width,
-        height
-    }
-}
-
 const useWindowDimensions = () => {
-    const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
+    const getWindowDimensions = (): WindowDimensionType => {
+        const { innerWidth: width, innerHeight: height } = window;
+        return {
+            width,
+            height
+        }
+    }
+    const [windowDimensions, setWindowDimensions] = useState<WindowDimensionType>();
     useLayoutEffect(() => {
         const isWindow = typeof window !== 'undefined';
         const handleResize = () => setWindowDimensions(getWindowDimensions());
