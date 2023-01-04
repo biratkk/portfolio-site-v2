@@ -16,7 +16,10 @@ const ProjectsPage = ({}: ProjectsPageType) => {
   }, []);
 
   return (
-    <div id="projects" className="flex w-screen h-screen justify-center items-center">
+    <div
+      id="projects"
+      className="flex w-screen h-screen justify-center items-center"
+    >
       <div className="flex w-5/6 flex-col items-center text-black dark:text-slate-300">
         <div className="w-full text-center mb-2 h-1/6">
           <HoverHeader>02. Projects</HoverHeader>
@@ -26,6 +29,7 @@ const ProjectsPage = ({}: ProjectsPageType) => {
         </div>
         <div className="mt-4">
           <a
+            rel="noopener noreferrer"
             className="underline text-green-600 hover:text-green-500 rounded-md p-2"
             href="https://github.com/biratkk"
             target={"_blank"}

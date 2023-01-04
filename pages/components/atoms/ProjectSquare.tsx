@@ -25,6 +25,7 @@ const ProjectSquare = ({
           href={link}
           target={"_blank"}
           className="text-black dark:text-slate-300"
+          rel="noopener noreferrer"
         >
           <motion.div
             initial={{ padding: "0" }}

@@ -25,10 +25,10 @@ const HomePage = () => {
             I love to learn.
           </h2>
           <span style={questrial.style} className="md:w-2/3 md:text-lg">
-            I'm a software engineer that specialises in full stack application
+            {`I'm a software engineer that specialises in full stack application
             development (amongst other things). I love to create and participate in
             projects that provide a different perspective while 
-            inherently solving the same problem.
+            inherently solving the same problem.`}
           </span>
         </div>
       </div>

@@ -30,9 +30,11 @@ const ContactMeSidebar = ({}: ContactMeSidebarType) => {
             {currentIcons.map((Icon) => {
               return (
                 <motion.a
+                  target={"_blank"}
                   href={Icon.url}
                   className={`flex h-1/4 w-full justify-center items-center p-2 shadow-lg dark:shadow-xl rounded-full`}
                   whileHover={{ translateY: "-3px" }}
+                  rel="noopener noreferrer"
                 >
                   <Icon.icon className="dark:text-white text-black hover:text-green-500 dark:hover:text-green-500 cursor-pointer w-full h-full" />
                 </motion.a>
