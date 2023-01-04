@@ -1,4 +1,4 @@
-import useDarkMode from "../../hooks/useDarkMode";
+import useDarkMode from "../../../hooks/useDarkMode";
 import { BsFillSunFill, BsMoonFill } from "react-icons/bs";
 import { motion } from "framer-motion";
 type DarkModeCheckBoxType = {};

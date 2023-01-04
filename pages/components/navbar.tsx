@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
-import useDarkMode from "../hooks/useDarkMode";
+import useDarkMode from "../../hooks/useDarkMode";
 import styled from "styled-components";
 import { Righteous } from "@next/font/google";
 import DarkModeCheckBox from "./atoms/DarkModeCheckBox";
-import useWindowDimensions from "../hooks/useWindowDimensions";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";

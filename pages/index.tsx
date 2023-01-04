@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Navbar from "./components/navbar";
-import useDarkMode from "./hooks/useDarkMode";
+import useDarkMode from "../hooks/useDarkMode";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import LoadingLandingPage from "./components/molecules/LoadingLandingPage";
