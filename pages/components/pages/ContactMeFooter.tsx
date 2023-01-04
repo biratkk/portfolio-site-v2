@@ -20,9 +20,13 @@ const ContactMeFooter = ({}: ContactMeFooterType) => {
         </h4>
         <div className="flex p-4">
           {IconsShown.map((icon) => {
-            console.log(icon);
             return (
-              <a rel="noopener noreferrer" target={"_blank"} href={icon.url} className="m-2 w-full h-full">
+              <a
+                rel="noopener noreferrer"
+                target={"_blank"}
+                href={icon.url}
+                className="m-2 w-full h-full"
+              >
                 <icon.icon className="hover:text-green-500 w-full h-full" />
               </a>
             );
