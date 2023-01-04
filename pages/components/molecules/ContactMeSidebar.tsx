@@ -16,7 +16,6 @@ const IconsShown = [GithubIcon, FacebookIcon, LinkedinIcon, TwitterIcon];
 type ContactMeSidebarType = {};
 const ContactMeSidebar = ({}: ContactMeSidebarType) => {
   const [currentIcons, setCurrentIcons] = useState(IconsShown);
-  const [darkMode] = useDarkMode();
 
   return (
     <div>

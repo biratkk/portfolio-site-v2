@@ -14,7 +14,7 @@ const TabbedSection = ({ experiences }: TabbedSectionType) => {
   return (
     <div className="flex flex-col items-center md:items-start md:flex-row justify-center">
       <div className="p-0 md:p-4 w-48 h-12 flex flex-row md:w-36 md:justify-start md:flex-col">
-        {experiences.map((_, ind) => {
+        {experiences && experiences.map((_, ind) => {
           return (
             <Tab
               style={promptNormal.style}

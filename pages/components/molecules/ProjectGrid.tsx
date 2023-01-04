@@ -7,7 +7,7 @@ type ProjectGridType = {
 const ProjectGrid = ({ projectDetails }: ProjectGridType) => {
   return (
     <Grid className="project-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-      {projectDetails.map((details) => {
+      {projectDetails && projectDetails.map((details) => {
         return <ProjectSquare {...details} />;
       })}
     </Grid>

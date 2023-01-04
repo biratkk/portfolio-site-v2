@@ -6,7 +6,7 @@ import axios from "axios";
 
 type ProjectsPageType = {};
 const ProjectsPage = ({}: ProjectsPageType) => {
-  const [projectDetails, setProjectDetails] = useState<ProjectDetailsType[]>();
+  const [projectDetails, setProjectDetails] = useState<ProjectDetailsType[]>([]);
 
   useEffect(() => {
     axios
@@ -25,7 +25,7 @@ const ProjectsPage = ({}: ProjectsPageType) => {
           <HoverHeader>02. Projects</HoverHeader>
         </div>
         <div>
-          <ProjectGrid projectDetails={projectDetails || []}></ProjectGrid>
+          <ProjectGrid projectDetails={projectDetails}></ProjectGrid>
         </div>
         <div className="mt-4">
           <a
