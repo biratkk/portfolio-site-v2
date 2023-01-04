@@ -5,10 +5,10 @@ import BackgroundParticles from "../BackgroundParticles";
 import styled from "styled-components";
 import Link from "../atoms/Link";
 
-const questrial = Questrial({ weight: "400" });
-const prompt = Prompt({ weight: "400" });
-const promptBold = Prompt({ weight: "700" });
-const opensans = Open_Sans({ weight: "400" });
+const questrial = Questrial({ weight: "400", subsets:["latin"] });
+const prompt = Prompt({ weight: "400", subsets:["latin"] });
+const promptBold = Prompt({ weight: "700", subsets:["latin"] });
+const opensans = Open_Sans({ weight: "400", subsets:["latin"] });
 const inter = Inter({ subsets: ["latin"] });
 type AboutPageType = {};
 

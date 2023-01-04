@@ -3,8 +3,8 @@ import Link from "../atoms/Link";
 import { ExperienceType } from "../pages/ExperiencePage";
 
 
-const promptNormal = Prompt({ weight: "400" });
-const promptBold = Prompt({ weight: "500" });
+const promptNormal = Prompt({ weight: "400", subsets:["latin"]});
+const promptBold = Prompt({ weight: "500", subsets:["latin"] });
 
 type TabDetailSectionType = {
   details: ExperienceType;
