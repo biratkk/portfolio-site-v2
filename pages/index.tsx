@@ -22,7 +22,6 @@ import ContactMeFooter from "./components/pages/ContactMeFooter";
 export default function Home() {
   // const navbarContext = useNavbarContext();
   const [darkMode] = useDarkMode();
-  console.log(pictureOfMe);
   return (
     <>
       <Head>
