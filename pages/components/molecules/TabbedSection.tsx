@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { ExperienceType } from "../pages/ExperiencePage";
 import TabDetailSection from "./TabDetailSection";
 
-const promptNormal = Prompt({ weight: "300" });
+const promptNormal = Prompt({ weight: "300", subsets: ["latin"] });
 
 type TabbedSectionType = {
   experiences: ExperienceType[];

@@ -5,8 +5,8 @@ import Navbar from "../navbar";
 import ContactMeSidebar from "../molecules/ContactMeSidebar";
 import BackgroundParticles from "../BackgroundParticles";
 
-const questrial = Questrial({ weight: "400" });
-const prompt = Prompt({ weight: "500" });
+const questrial = Questrial({ weight: "400", subsets:["latin"] });
+const prompt = Prompt({ weight: "500", subsets:["latin"] });
 
 const HomePage = () => {
   return (

@@ -1,4 +1,4 @@
-import iconMappings from "../../util/iconMappings";
+import iconMappings from "../../../util/iconMappings";
 import Link from "../atoms/Link";
 
 type ContactMeFooterType = {};

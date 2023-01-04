@@ -1,11 +1,11 @@
-import iconMappings, { Icons } from "../../util/iconMappings";
+import iconMappings, { Icons } from "../../../util/iconMappings";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { Roboto_Flex } from "@next/font/google";
 import styled from "styled-components";
 import useDarkMode from "../../hooks/useDarkMode";
 
-const roboto = Roboto_Flex({ weight: "100" });
+const roboto = Roboto_Flex({ weight: "100" , subsets:["latin"]});
 
 const GithubIcon = iconMappings.GITHUB;
 const FacebookIcon = iconMappings.FACEBOOK;
