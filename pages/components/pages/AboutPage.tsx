@@ -29,7 +29,7 @@ const aboutInfo: { header: string; description: string }[] = [
 
 const AboutPage = ({}: AboutPageType) => {
   return (
-      <div id="about" className="flex justify-center items-center w-screen h-screen overflow-hidden">
+      <div id="about" className="flex justify-center items-center w-screen h-screen overflow-hidden ">
         <div className="w-5/6 flex flex-col md:flex-row justify-around">
           <AllText className="md:w-2/4 lg:w-1/3 text-base md:text-lg dark:text-slate-300">
             <HoverHeader className="">01. About</HoverHeader>
@@ -63,7 +63,7 @@ const AboutPage = ({}: AboutPageType) => {
           </AllText>
           <div className="flex items-center justify-center w-1/3">
             <img
-              className="w-30 h-30 lg:w-80 lg:h-80 md:w-48 md:h-48 aspect-square mt-2 ml-2 hover:mt-0 hover:ml-0 duration-500 bg-green-800"
+              className="w-30 h-30 lg:w-80 lg:h-80 md:w-48 md:h-48 aspect-square border-green-500 border-2 rounded-full mt-2 ml-2 hover:mt-0 hover:ml-0 duration-500"
               src={pictureOfMe.src}
               alt="Picture of me"
             />
