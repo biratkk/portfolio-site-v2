@@ -1,4 +1,7 @@
-import { SVGType } from "./LearningSVG";
+type SVGType = {
+    width: number;
+    height: number;
+}
 
 const InspirationSVG = ({ width, height }: SVGType) => {
   return (
