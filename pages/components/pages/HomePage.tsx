@@ -5,7 +5,6 @@ import pictureOfMe from "../../../public/picture-me.png";
 import Navbar from "../navbar";
 import ContactMeSidebar from "../molecules/ContactMeSidebar";
 import BackgroundParticles from "../BackgroundParticles";
-import LearningSVG from "../atoms/SVGs/LearningSVG";
 import InspirationSVG from "../atoms/SVGs/InspirationSVG";
 
 const questrial = Questrial({ weight: "400", subsets:["latin"] });
