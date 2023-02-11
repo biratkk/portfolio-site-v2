@@ -6,19 +6,19 @@ const projectDetails: ProjectDetailsType[] = [
   {
     date: '11/01/2023',
     title: 'Connect4',
-    description: "This is the description for connect4.",
+    description: "A website which hosts a game of connect4 against an AI.",
     link: "https://github.com/biratkk/connect4"
   },
   {
     date: '12/01/2023',
     title: 'Pentatonic',
-    description: "This is the description for pentatonic",
+    description: "A flashcard application which uses NLP to translate notes into direct flashcards.",
     link: ""
   },
   {
     date: '13/01/2023',
     title: 'Sudoku Solver',
-    description: 'This is the description for sudoku solver',
+    description: 'A sudoku solver that utilises a DFS backtracking algorithm to find a solution to the sudoku solver.',
     link: "https://github.com/biratkk/JavaSudokuSolver"
   }
 ]
