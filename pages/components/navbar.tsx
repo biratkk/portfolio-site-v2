@@ -81,8 +81,8 @@ const Navbar = () => {
             </li>
             <li className="my-4 md:my-0 md:ml-4">
               <a
-                download={true}
-                href="/public/Birat_Koirala_CV.pdf"
+                target="_blank"
+                href="/Birat_Koirala_CV.pdf"
                 className={`hover:bg-green-600 py-2 px-2 rounded-md text-white bg-green-500 cursor-pointer`}
               >
                 Resume
