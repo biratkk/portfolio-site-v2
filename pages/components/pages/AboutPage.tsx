@@ -1,8 +1,6 @@
-import pictureOfMe from "../../../public/picture-me.png";
-import { Questrial, Prompt, Open_Sans, Inter } from "@next/font/google";
-import PromptButton from "../atoms/PromptButton";
-import BackgroundParticles from "../BackgroundParticles";
+import { Inter, Open_Sans, Prompt, Questrial } from "@next/font/google";
 import styled from "styled-components";
+import pictureOfMe from "../../../public/picture-me.png";
 import Link from "../atoms/Link";
 
 const questrial = Questrial({ weight: "400", subsets:["latin"] });
@@ -63,7 +61,7 @@ const AboutPage = ({}: AboutPageType) => {
           </AllText>
           <div className="flex items-center justify-center w-1/3">
             <img
-              className="w-30 h-30 lg:w-80 lg:h-80 md:w-48 md:h-48 aspect-square border-green-500 border-2 rounded-full mt-2 ml-2 hover:mt-0 hover:ml-0 duration-500"
+              className="w-30 h-30 shadow-xl object-cover lg:w-80 lg:h-80 md:w-48 md:h-48 aspect-square border-green-500 border-2 rounded-full mt-2 ml-2 hover:mt-0 hover:ml-0 duration-500"
               src={pictureOfMe.src}
               alt="Picture of me"
             />
