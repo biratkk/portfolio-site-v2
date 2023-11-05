@@ -6,8 +6,8 @@ const experienceDetails: ExperienceType[] = [
   {
     company: "Amazon",
     role: "Software Development Engineer Intern",
-    fromDate: "3/7/2022",
-    toDate: "Present",
+    fromDate: "July 2023",
+    toDate:"Sept 2023",
     details: [
       `Designed and built a proof of concept prototype UI design tool in
 React that improved developer workflow by 70% for a large-scale
@@ -27,8 +27,8 @@ prototype.`,
   {
     company: "Fundapps",
     role: "Software Engineering Intern",
-    fromDate: "7/6/2022",
-    toDate: "7/9/2022",
+    fromDate: "June 2022",
+    toDate: "September 2022",
     details: [
       `Migrated a dynamic graph and chat box from monolithic .NET
     component to standalone React service, allowing the user to
