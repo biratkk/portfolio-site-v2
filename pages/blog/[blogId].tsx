@@ -23,7 +23,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
   return { props: { blog } };
 }
 
-export default function ({ blog }: { blog: BlogEntryResponse }) {
+export default function BlogInstance ({ blog }: { blog: BlogEntryResponse }) {
   console.log(blog.fields.authorImage);
   return (
     <div className="container dark:text-white px-4 md:px-0 h-fit mx-auto py-32">
