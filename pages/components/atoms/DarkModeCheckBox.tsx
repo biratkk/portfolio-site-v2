@@ -1,5 +1,5 @@
 import { BsFillSunFill, BsMoonFill } from "react-icons/bs";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { useDarkMode } from "../../../context/DarkModeContext";
 type DarkModeCheckBoxType = {};
 

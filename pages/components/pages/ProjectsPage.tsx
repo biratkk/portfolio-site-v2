@@ -3,19 +3,15 @@ import { ProjectDetailsType } from "../atoms/ProjectSquare";
 import ProjectGrid from "../molecules/ProjectGrid";
 import { HoverHeader } from "./AboutPage";
 import axios from "axios";
+import { EntryCollection, EntrySkeletonType } from "contentful";
+import { ProjectPreviewSkeleton } from "../contentful/projectPreview";
+import { ObjectEntriesResponse } from "../contentful";
 
-type ProjectsPageType = {};
+type ProjectsPageType = {
+  projectDetails: ObjectEntriesResponse<ProjectPreviewSkeleton>
+};
 
-export default function ProjectsPage({}: ProjectsPageType) {
-  const [projectDetails, setProjectDetails] = useState<ProjectDetailsType[]>(
-    []
-  );
-  useEffect(() => {
-    axios
-      .get<ProjectDetailsType[]>("/api/project-details")
-      .then((res) => res.data)
-      .then((data) => setProjectDetails(data));
-  }, []);
+export default function ProjectsPage({projectDetails}: ProjectsPageType) {
   return (
     <div
       id="projects"

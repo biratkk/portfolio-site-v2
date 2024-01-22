@@ -1,30 +1,25 @@
 import { useRouter } from "next/router";
-import {
-  Blog,
-  BlogEntryResponse,
-  getBlogEntry,
-} from "../components/contentful";
-import { NextPageContext } from "next";
+import { InferGetServerSidePropsType, NextPageContext } from "next";
 import { GetServerSidePropsContext } from "next";
 import ReactMarkdown from "react-markdown";
-import { Asset } from "contentful";
+import { Asset, EntrySkeletonType } from "contentful";
 import remarkGfm from "remark-gfm";
 import rehypekatex from 'rehype-katex'
 import remarkMath from 'remark-math'
 import Link from "../components/atoms/Link";
-import { AnimatePresence } from "framer-motion";
+import { Blog, BlogSkeleton, blog } from "../components/contentful/blog";
+import { ObjectEntryResponse } from "../components/contentful";
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
   const { blogId } = context.query;
   if (!blogId) {
     throw new Error("Please make sure you have a valid blog (id).");
   }
-  const blog = await getBlogEntry(blogId as string);
-  return { props: { blog } };
+  const blogDetails = await blog.getEntry(blogId as string);
+  return { props: { blogDetails } };
 }
 
-export default function BlogInstance ({ blog }: { blog: BlogEntryResponse }) {
-  console.log(blog.fields.authorImage);
+export default function BlogInstance({ blogDetails:blog }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
     <div className="container dark:text-white px-4 md:px-0 h-fit mx-auto py-32">
       <h1 className="text-5xl my-4 md:my-2 text-center font-bold">
@@ -38,7 +33,7 @@ export default function BlogInstance ({ blog }: { blog: BlogEntryResponse }) {
         <p>{blog.fields.author}</p>
         <p className="opacity-80">
           -{" "}
-          {new Date(blog.fields.dateAndTime).toLocaleDateString("en-GB", {
+          {new Date(blog.fields.dateAndTime as string).toLocaleDateString("en-GB", {
             weekday: "long",
             year: "numeric",
             month: "long",
@@ -47,7 +42,6 @@ export default function BlogInstance ({ blog }: { blog: BlogEntryResponse }) {
         </p>
       </div>
       <div className="markdown">
-        <AnimatePresence>
           <ReactMarkdown
             components={{
               a: (props) => {
@@ -57,9 +51,8 @@ export default function BlogInstance ({ blog }: { blog: BlogEntryResponse }) {
             remarkPlugins={[remarkGfm, remarkMath]}
             rehypePlugins={[rehypekatex]}
           >
-            {blog.fields.blogContent}
+            {blog.fields.blogContent as string}
           </ReactMarkdown>
-        </AnimatePresence>
       </div>
     </div>
   );

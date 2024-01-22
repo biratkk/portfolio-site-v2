@@ -19,9 +19,10 @@ const ContactMeFooter = ({}: ContactMeFooterType) => {
           or through:
         </h4>
         <div className="flex p-4">
-          {IconsShown.map((icon) => {
+          {IconsShown.map((icon, idx) => {
             return (
               <a
+                key={idx}
                 rel="noopener noreferrer"
                 target={"_blank"}
                 href={icon.url}

@@ -42,7 +42,6 @@ export const DarkModeContextProvider = ({
     window.matchMedia("(prefers-color-scheme: dark)").matches;
     const userHasPreference = window.localStorage.getItem("darkMode") !== null;
     const userPref = window.localStorage.getItem("darkMode") === 'true';
-    console.log(windowPref, userHasPreference, userPref);
     let darkMode = windowPref;
     if (userHasPreference) darkMode = userPref;
     setLocalStorageDarkMode(darkMode ? 'true' : 'false');

@@ -1,5 +1,5 @@
 import { Inter, Open_Sans, Prompt, Questrial } from "@next/font/google";
-import styled from "styled-components";
+import styled from "@emotion/styled";
 import pictureOfMe from "../../../public/picture-me.png";
 import Link from "../atoms/Link";
 import { opensans } from "../../../fonts";

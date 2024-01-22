@@ -1,45 +1,33 @@
-import { AnimatePresence, motion } from "framer-motion";
-import { useState } from "react";
-import styled from "styled-components";
+import { motion } from "framer-motion";
+import styled from "@emotion/styled";
+import { Entry } from "contentful";
+import { BlogSkeleton } from "../contentful/blog";
+import { ProjectPreviewSkeleton } from "../contentful/projectPreview";
+import { ObjectEntryResponse } from "../contentful";
 
-export type ProjectDetailsType = {
-  date: string;
-  title: string;
-  description: string;
-  link: string;
-};
+export type ProjectDetailsType = ObjectEntryResponse<ProjectPreviewSkeleton>;
 
 type ProjectSquareType = ProjectDetailsType;
 
-const ProjectSquare = ({
-  date,
-  title,
-  description,
-  link,
-}: ProjectSquareType) => {
-  const [hovering, setHovering] = useState<boolean>(false);
+const ProjectSquare = (entry: ProjectSquareType) => {
   return (
-    <div className="snap-start">
-      <AnimatePresence>
+    <div className="snap-start w-80 aspect-square">
         <a
-          href={link}
+          href={entry.fields.url}
           target={"_blank"}
           className="text-black dark:text-slate-300"
           rel="noopener noreferrer"
         >
-          <motion.div
-            initial={{ padding: "0" }}
-            whileHover={{ padding: "6px" }}
-            className="flex flex-col w-full h-full bg-white dark:bg-slate-700"
+          <div
+            className="flex flex-col hover:p-2 duration-200 w-full h-full bg-white dark:bg-slate-700"
           >
             <ProjectSquareInner className=" border-2 w-full h-full p-4 shadow-lg">
-              <h3 className="text-2xl text-green-500">{title}</h3>
-              <span className="text-sm text-slate-400 italic">{date}</span>
-              <div className="text-lg">{description}</div>
+              <h3 className="text-2xl text-green-500">{entry.fields.title}</h3>
+              <span className="text-sm text-slate-400 italic">{new Date(entry.fields.date).toDateString()}</span>
+              <div className="text-lg">{entry.fields.description}</div>
             </ProjectSquareInner>
-          </motion.div>
+          </div>
         </a>
-      </AnimatePresence>
     </div>
   );
 };

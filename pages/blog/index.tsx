@@ -1,20 +1,18 @@
-import { BlogEntriesResponse, getBlogEntries } from "../components/contentful";
-import { useDarkMode } from "../../context/DarkModeContext";
-import Navbar from "../components/navbar";
 import { opensans } from "../../fonts";
 import Link from "next/link";
-import remarkGFM from 'remark-gfm'
+import { Blog, BlogSkeleton, blog } from "../components/contentful/blog";
+import { ObjectEntriesResponse } from "../components/contentful";
+import { EntrySkeletonType } from "contentful";
+import { InferGetServerSidePropsType } from "next";
 
 export async function getServerSideProps() {
-  const entries = await getBlogEntries();
+  const entries = await blog.getEntries({content_type: 'blogPost'});
   return { props: { entries } };
 }
-
+type BlogEntriesResponse = ObjectEntriesResponse<BlogSkeleton>;
 export default function BlogListPage({
   entries,
-}: {
-  entries: BlogEntriesResponse;
-}) {
+}: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
     <>
       <div className="pt-4">

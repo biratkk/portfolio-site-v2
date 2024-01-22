@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styled from "styled-components";
+import styled from "@emotion/styled";
 import { Righteous } from "@next/font/google";
 import DarkModeCheckBox from "./atoms/DarkModeCheckBox";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
