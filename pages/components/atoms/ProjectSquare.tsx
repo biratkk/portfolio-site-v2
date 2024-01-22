@@ -5,29 +5,32 @@ import { BlogSkeleton } from "../../../components/contentful/blog";
 import { ProjectPreviewSkeleton } from "../../../components/contentful/projectPreview";
 import { ObjectEntryResponse } from "../../../components/contentful";
 
-export type ProjectDetailsType = ObjectEntryResponse<ProjectPreviewSkeleton>;
+export type ProjectDetailsType = {
+  url: string;
+  title: string;
+  date: string;
+  description: string;
+};
 
-type ProjectSquareType = ProjectDetailsType;
-
-const ProjectSquare = (entry: ProjectSquareType) => {
+const ProjectSquare = ({url, title, date, description}: ProjectDetailsType) => {
   return (
     <div className="snap-start w-80 aspect-square">
-        <a
-          href={entry.fields.url}
-          target={"_blank"}
-          className="text-black dark:text-slate-300"
-          rel="noopener noreferrer"
-        >
-          <div
-            className="flex flex-col hover:p-2 duration-200 w-full h-full bg-white dark:bg-slate-700"
-          >
-            <ProjectSquareInner className=" border-2 w-full h-full p-4 shadow-lg">
-              <h3 className="text-2xl text-green-500">{entry.fields.title}</h3>
-              <span className="text-sm text-slate-400 italic">{new Date(entry.fields.date).toDateString()}</span>
-              <div className="text-lg">{entry.fields.description}</div>
-            </ProjectSquareInner>
-          </div>
-        </a>
+      <a
+        href={url}
+        target={"_blank"}
+        className="text-black dark:text-slate-300"
+        rel="noopener noreferrer"
+      >
+        <div className="flex flex-col hover:p-2 duration-200 w-full h-full bg-white dark:bg-slate-700">
+          <ProjectSquareInner className=" border-2 w-full h-full p-4 shadow-lg">
+            <h3 className="text-2xl text-green-500">{title}</h3>
+            <span className="text-sm text-slate-400 italic">
+              {new Date(date).toDateString()}
+            </span>
+            <div className="text-lg">{description}</div>
+          </ProjectSquareInner>
+        </div>
+      </a>
     </div>
   );
 };
