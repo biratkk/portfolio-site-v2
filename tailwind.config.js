@@ -13,6 +13,9 @@ module.exports = {
         "moss-green": "#95a472",
         "persian-indigo": "#360568",
       },
+      fontFamily: {
+        'open-sans': ['Open Sans']
+      }
     },
   },
   plugins: [],

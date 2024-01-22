@@ -5,16 +5,17 @@ import { HoverHeader } from "./AboutPage";
 import axios from "axios";
 
 type ProjectsPageType = {};
-const ProjectsPage = ({}: ProjectsPageType) => {
-  const [projectDetails, setProjectDetails] = useState<ProjectDetailsType[]>([]);
 
+export default function ProjectsPage({}: ProjectsPageType) {
+  const [projectDetails, setProjectDetails] = useState<ProjectDetailsType[]>(
+    []
+  );
   useEffect(() => {
     axios
-      .get("/api/project-details")
+      .get<ProjectDetailsType[]>("/api/project-details")
       .then((res) => res.data)
       .then((data) => setProjectDetails(data));
   }, []);
-
   return (
     <div
       id="projects"
@@ -40,6 +41,4 @@ const ProjectsPage = ({}: ProjectsPageType) => {
       </div>
     </div>
   );
-};
-
-export default ProjectsPage;
+}

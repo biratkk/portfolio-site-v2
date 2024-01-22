@@ -2,12 +2,8 @@ import { Inter, Open_Sans, Prompt, Questrial } from "@next/font/google";
 import styled from "styled-components";
 import pictureOfMe from "../../../public/picture-me.png";
 import Link from "../atoms/Link";
+import { opensans } from "../../../fonts";
 
-const questrial = Questrial({ weight: "400", subsets:["latin"] });
-const prompt = Prompt({ weight: "400", subsets:["latin"] });
-const promptBold = Prompt({ weight: "700", subsets:["latin"] });
-const opensans = Open_Sans({ weight: "400", subsets:["latin"] });
-const inter = Inter({ subsets: ["latin"] });
 type AboutPageType = {};
 
 const aboutInfo: { header: string; description: string }[] = [
