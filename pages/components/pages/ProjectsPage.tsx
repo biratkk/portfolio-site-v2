@@ -4,8 +4,8 @@ import ProjectGrid from "../molecules/ProjectGrid";
 import { HoverHeader } from "./AboutPage";
 import axios from "axios";
 import { EntryCollection, EntrySkeletonType } from "contentful";
-import { ProjectPreviewSkeleton } from "../contentful/projectPreview";
-import { ObjectEntriesResponse } from "../contentful";
+import { ProjectPreviewSkeleton } from "../../../components/contentful/projectPreview";
+import { ObjectEntriesResponse } from "../../../components/contentful";
 
 type ProjectsPageType = {
   projectDetails: ObjectEntriesResponse<ProjectPreviewSkeleton>

@@ -7,8 +7,8 @@ import remarkGfm from "remark-gfm";
 import rehypekatex from 'rehype-katex'
 import remarkMath from 'remark-math'
 import Link from "../components/atoms/Link";
-import { Blog, BlogSkeleton, blog } from "../components/contentful/blog";
-import { ObjectEntryResponse } from "../components/contentful";
+import { Blog, BlogSkeleton, blog } from "../../components/contentful/blog";
+import { ObjectEntryResponse } from "../../components/contentful";
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
   const { blogId } = context.query;

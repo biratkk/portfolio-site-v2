@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import styled from "@emotion/styled";
 import { Entry } from "contentful";
-import { BlogSkeleton } from "../contentful/blog";
-import { ProjectPreviewSkeleton } from "../contentful/projectPreview";
-import { ObjectEntryResponse } from "../contentful";
+import { BlogSkeleton } from "../../../components/contentful/blog";
+import { ProjectPreviewSkeleton } from "../../../components/contentful/projectPreview";
+import { ObjectEntryResponse } from "../../../components/contentful";
 
 export type ProjectDetailsType = ObjectEntryResponse<ProjectPreviewSkeleton>;
 

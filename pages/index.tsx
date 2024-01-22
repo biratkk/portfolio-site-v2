@@ -7,7 +7,7 @@ import ProjectsPage from "./components/pages/ProjectsPage";
 import ExperiencePage from "./components/pages/ExperiencePage";
 import ContactMeFooter from "./components/pages/ContactMeFooter";
 import { InferGetServerSidePropsType } from "next";
-import { projectPreview } from "./components/contentful/projectPreview";
+import { projectPreview } from "../components/contentful/projectPreview";
 
 export async function getServerSideProps() {
   const projectEntries = await projectPreview.getEntries({content_type: 'projectPreview'});

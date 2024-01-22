@@ -1,7 +1,7 @@
 import { EntryCollection } from "contentful";
 import ProjectSquare, { ProjectDetailsType } from "../atoms/ProjectSquare";
-import { ProjectPreviewSkeleton } from "../contentful/projectPreview";
-import { ObjectEntriesResponse } from "../contentful";
+import { ProjectPreviewSkeleton } from "../../../components/contentful/projectPreview";
+import { ObjectEntriesResponse } from "../../../components/contentful";
 
 type ProjectGridType = {
   projectDetails: ObjectEntriesResponse<ProjectPreviewSkeleton>;

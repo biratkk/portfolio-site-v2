@@ -1,7 +1,7 @@
 import { opensans } from "../../fonts";
 import Link from "next/link";
-import { Blog, BlogSkeleton, blog } from "../components/contentful/blog";
-import { ObjectEntriesResponse } from "../components/contentful";
+import { Blog, BlogSkeleton, blog } from "../../components/contentful/blog";
+import { ObjectEntriesResponse } from "../../components/contentful";
 import { EntrySkeletonType } from "contentful";
 import { InferGetServerSidePropsType } from "next";
 
