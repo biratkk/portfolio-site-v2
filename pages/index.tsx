@@ -11,14 +11,12 @@ import { projectPreview } from "./components/contentful/projectPreview";
 
 export async function getServerSideProps() {
   const projectEntries = await projectPreview.getEntries({content_type: 'projectPreview'});
-  console.log(projectEntries)
   return { props: { projectEntries } };
 }
 
 export default function Home({
   projectEntries,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
-  console.log(projectEntries);
   return (
     <div className="w-screen h-screen snap-mandatory snap-y">
       <ContactMeSidebar />
