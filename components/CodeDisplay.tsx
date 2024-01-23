@@ -24,10 +24,14 @@ export default function CodeDisplay({
 
   return match ? (
     <div className="block relative">
-      <Tooltip isOpen={isNotifOpen} showArrow content="Copied!" placement="left">
+      <Tooltip
+        className="dark:text-white"
+        isOpen={isNotifOpen}
+        content="Copied!"
+        placement="left"
+      >
         <button
           onClick={async () => {
-            console.log("Hello");
             const text = String(children);
             if ("clipboard" in navigator) {
               await navigator.clipboard.writeText(text);

@@ -18,7 +18,7 @@ const Navbar = () => {
 
   return (
       <nav className="p-3 text-black fixed w-full">
-        <div className="flex p-2 bg-opacity-20 bg-white border dark:border-white border-green-500 border-opacity-20 max-h-16 justify-between backdrop-filter backdrop-blur-sm rounded-lg shadow-lg">
+        <div className="flex p-2 bg-white border dark:border-white border-green-500 border-opacity-20 max-h-16 justify-between rounded-lg shadow-lg">
           <div className="flex items-center justify-center mx-2">
             <Link href="/#home" scroll={false}>
               <h1
