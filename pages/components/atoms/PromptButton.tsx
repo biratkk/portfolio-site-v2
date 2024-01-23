@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { ReactNode, useState } from "react";
 
 type PromptButtonType = {
@@ -27,7 +27,6 @@ const PromptButton = ({
   const className =
     "p-2 my-2 rounded-md bg-green-500 text-white hover:!scale-110";
   return (
-    <AnimatePresence>
         <motion.a
           key={"prompt-link"}
           onClick={onClick}
@@ -39,7 +38,6 @@ const PromptButton = ({
         >
           {children}
         </motion.a>
-    </AnimatePresence>
   );
 };
 

@@ -20,8 +20,8 @@ const TabDetailSection = ({ details }: TabDetailSectionType) => {
           {details.fromDate} - {details.toDate}
         </div>
         <ul className="list-disc ml-4">
-          {details.details.map((val) => (
-            <li className="">{val}</li>
+          {details.details.map((val, idx) => (
+            <li key={idx} className="">{val}</li>
           ))}
         </ul>
       </div>

@@ -1,45 +1,36 @@
-import { AnimatePresence, motion } from "framer-motion";
-import { useState } from "react";
-import styled from "styled-components";
+import { motion } from "framer-motion";
+import styled from "@emotion/styled";
+import { Entry } from "contentful";
+import { BlogSkeleton } from "../../../components/contentful/blog";
+import { ProjectPreviewSkeleton } from "../../../components/contentful/projectPreview";
+import { ObjectEntryResponse } from "../../../components/contentful";
 
 export type ProjectDetailsType = {
-  date: string;
+  url: string;
   title: string;
+  date: string;
   description: string;
-  link: string;
 };
 
-type ProjectSquareType = ProjectDetailsType;
-
-const ProjectSquare = ({
-  date,
-  title,
-  description,
-  link,
-}: ProjectSquareType) => {
-  const [hovering, setHovering] = useState<boolean>(false);
+const ProjectSquare = ({url, title, date, description}: ProjectDetailsType) => {
   return (
-    <div className="snap-start">
-      <AnimatePresence>
-        <a
-          href={link}
-          target={"_blank"}
-          className="text-black dark:text-slate-300"
-          rel="noopener noreferrer"
-        >
-          <motion.div
-            initial={{ padding: "0" }}
-            whileHover={{ padding: "6px" }}
-            className="flex flex-col w-full h-full bg-white dark:bg-slate-700"
-          >
-            <ProjectSquareInner className=" border-2 w-full h-full p-4 shadow-lg">
-              <h3 className="text-2xl text-green-500">{title}</h3>
-              <span className="text-sm text-slate-400 italic">{date}</span>
-              <div className="text-lg">{description}</div>
-            </ProjectSquareInner>
-          </motion.div>
-        </a>
-      </AnimatePresence>
+    <div className="snap-start w-80 aspect-square">
+      <a
+        href={url}
+        target={"_blank"}
+        className="text-black dark:text-slate-300"
+        rel="noopener noreferrer"
+      >
+        <div className="flex flex-col hover:p-2 duration-200 w-full h-full bg-white dark:bg-slate-700">
+          <ProjectSquareInner className=" border-2 w-full h-full p-4 shadow-lg">
+            <h3 className="text-2xl text-green-500">{title}</h3>
+            <span className="text-sm text-slate-400 italic">
+              {new Date(date).toDateString()}
+            </span>
+            <div className="text-lg">{description}</div>
+          </ProjectSquareInner>
+        </div>
+      </a>
     </div>
   );
 };

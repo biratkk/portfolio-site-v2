@@ -8,13 +8,10 @@ const HighlightedDots = ({
   highlightedIndex,
   numOfDots,
 }: HighlightedDotsType) => {
-    console.log(highlightedIndex);
-    console.log(numOfDots);
     const [tempArr, setTempArr] = useState(new Array(numOfDots));
 
     useEffect(() => {
         setTempArr(new Array(numOfDots));
-        console.log(tempArr);
     }, [numOfDots])
   return (
     <div>

@@ -1,17 +1,22 @@
 import iconMappings, { Icons } from "../../../util/iconMappings";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { useState } from "react";
 import { Roboto_Flex } from "@next/font/google";
-import styled from "styled-components";
+import styled from "@emotion/styled";
 
-const roboto = Roboto_Flex({ weight: "100" , subsets:["latin"]});
+const roboto = Roboto_Flex({ weight: "100", subsets: ["latin"] });
 
 const GithubIcon = iconMappings.GITHUB;
 const FacebookIcon = iconMappings.FACEBOOK;
 const LinkedinIcon = iconMappings.LINKEDIN;
 const TwitterIcon = iconMappings.TWITTER;
 
-const IconsShown = [GithubIcon, FacebookIcon, LinkedinIcon, TwitterIcon];
+const IconsShown = [
+  GithubIcon,
+  FacebookIcon,
+  LinkedinIcon,
+  TwitterIcon,
+];
 type ContactMeSidebarType = {};
 const ContactMeSidebar = ({}: ContactMeSidebarType) => {
   const [currentIcons, setCurrentIcons] = useState(IconsShown);
@@ -19,37 +24,30 @@ const ContactMeSidebar = ({}: ContactMeSidebarType) => {
   return (
     <div>
       <div className="ml-3 hidden lg:block w-11 h-full fixed">
-        <div id="top" className="flex justify-center items-center h-1/2"></div>
+        <div id="top" className="flex justify-center items-center h-2/5"></div>
         <div
-          id="icons"
-          className={`rounded-tr-lg rounded-br-lg flex flex-col justify-center items-center h-1/4 `}
+          className={`flex gap-4 py-4 flex-col items-center shadow-md outline outline-1 dark:outline-slate-600 outline-slate-100 justify-around rounded-full`}
         >
-          <AnimatePresence>
-            {currentIcons.map((Icon) => {
-              return (
+          {currentIcons.map((Icon, idx) => {
+            return (
+              <div
+                key={idx}
+                className={`flex justify-center items-center rounded-full`}
+              >
                 <motion.a
                   target={"_blank"}
                   href={Icon.url}
-                  className={`flex h-1/4 w-full justify-center items-center p-2 shadow-lg dark:shadow-xl rounded-full`}
                   whileHover={{ translateY: "-3px" }}
                   rel="noopener noreferrer"
                 >
-                  <Icon.icon className="dark:text-white text-black hover:text-green-500 dark:hover:text-green-500 cursor-pointer w-full h-full" />
+                  <Icon.icon
+                    size={28}
+                    className="aspect-square dark:text-white text-black hover:text-green-500 dark:hover:text-green-500 cursor-pointer"
+                  />
                 </motion.a>
-              );
-            })}
-          </AnimatePresence>
-        </div>
-      </div>
-      <div className="ml-3 hidden lg:block w-11 right-0 h-full fixed">
-        <div id="top" className="flex justify-center items-center h-1/2"></div>
-        <div id="email" className="flex justify-center h-1/4">
-          <Email
-            href="mailto:koiralabirat@gmail.com"
-            className="text-black dark:text-slate-300 tracking-widest "
-          >
-            koiralabirat@gmail.com
-          </Email>
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>
