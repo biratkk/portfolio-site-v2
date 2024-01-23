@@ -30,7 +30,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className=" z-50 text-black fixed w-[calc(100vw-1em)] p-2 ">
+    <nav className=" z-50 text-black fixed w-screen p-2 ">
       <div className="flex p-2 bg-white outline-1 outline dark:bg-slate-700 dark:outline-slate-500 outline-gray-100 max-h-16 justify-between rounded-md shadow-lg">
         <div className="flex items-center justify-center mx-2">
           <Link href="/#home" scroll={false}>
