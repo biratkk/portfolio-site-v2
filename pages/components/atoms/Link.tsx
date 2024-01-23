@@ -9,7 +9,7 @@ type LinkType = {
 };
 const Link = ({ children, href, newTab }: LinkType) => {
   return (
-    <a href={href} className="" target={newTab ? "_blank" : undefined}>
+    <a href={href} className="" target={newTab ? "_blank" : undefined} rel="noopener noreferrer">
       <LinkWrapper>
         <HighlightText>{children}</HighlightText>
       </LinkWrapper>
