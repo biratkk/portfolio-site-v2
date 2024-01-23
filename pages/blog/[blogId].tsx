@@ -28,7 +28,8 @@ export default function BlogInstance({
       </h1>
       <div className="flex items-center justify-center gap-2 my-4">
         <img
-          src={(blog.fields.authorImage as Asset).fields.file?.url?.toString()}
+          src={(blog.fields.authorImage as Asset).fields.file?.url?.toString() || ""}
+          alt={"Author"}
           className="w-8 aspect-square rounded-full "
         />
         <p>{blog.fields.author}</p>
