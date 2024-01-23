@@ -3,11 +3,11 @@ import { GetServerSidePropsContext } from "next";
 import ReactMarkdown from "react-markdown";
 import { Asset } from "contentful";
 import remarkGfm from "remark-gfm";
-import rehypekatex from "rehype-katex";
 import remarkMath from "remark-math";
 import Link from "../components/atoms/Link";
 import { blog } from "../../components/contentful/blog";
 import CodeDisplay from "../../components/CodeDisplay";
+import BlogContentMarkdown from "../../components/BlogContentMarkdown";
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
   const { blogId } = context.query;
@@ -22,13 +22,16 @@ export default function BlogInstance({
   blogDetails: blog,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
-    <div className="container dark:text-white px-4 md:px-8 h-fit mx-auto py-32">
+    <div className="container dark:text-white px-8 md:px-16 lg:px-48 h-fit mx-auto py-32">
       <h1 className="text-5xl my-4 md:my-2 text-center font-bold">
         {blog.fields.title}
       </h1>
       <div className="flex items-center justify-center gap-2 my-4">
         <img
-          src={(blog.fields.authorImage as Asset).fields.file?.url?.toString() || ""}
+          src={
+            (blog.fields.authorImage as Asset).fields.file?.url?.toString() ||
+            ""
+          }
           alt={"Author"}
           className="w-8 aspect-square rounded-full "
         />
@@ -46,20 +49,7 @@ export default function BlogInstance({
           )}
         </p>
       </div>
-      <div className="markdown">
-        <ReactMarkdown
-          components={{
-            a: (props) => {
-              return <Link href={props.href || "#"}>{props.children}</Link>;
-            },
-            code: CodeDisplay
-          }}
-          remarkPlugins={[remarkGfm, remarkMath]}
-          rehypePlugins={[rehypekatex]}
-        >
-          {blog.fields.blogContent as string}
-        </ReactMarkdown>
-      </div>
+      <BlogContentMarkdown content={blog.fields.blogContent as string} />
     </div>
   );
 }

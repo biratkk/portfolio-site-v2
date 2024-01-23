@@ -35,7 +35,7 @@ const ProjectSquare = ({
               <div className="">{description}</div>
             </div>
             <div className="w-full flex gap-2 flex-wrap">
-              {tags && tags.map((tag, idx) => <Pill key={idx} text={tag} />)}
+              {tags && tags.map((tag, idx) => <Pill key={idx}>{tag}</Pill>)}
             </div>
           </ProjectSquareInner>
         </div>

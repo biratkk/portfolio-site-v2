@@ -5,10 +5,11 @@ import HighlightText from "./HighlightText";
 type LinkType = {
   children: ReactNode;
   href: string;
+  newTab?: boolean;
 };
-const Link = ({ children, href }: LinkType) => {
+const Link = ({ children, href, newTab }: LinkType) => {
   return (
-    <a href={href} className="">
+    <a href={href} className="" target={newTab ? "_blank" : undefined}>
       <LinkWrapper>
         <HighlightText>{children}</HighlightText>
       </LinkWrapper>

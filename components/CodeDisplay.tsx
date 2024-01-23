@@ -1,3 +1,5 @@
+'use client'
+
 import { useDarkMode } from "../context/DarkModeContext";
 import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
 import {
