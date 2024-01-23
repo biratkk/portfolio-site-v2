@@ -1,14 +1,13 @@
-import { useRouter } from "next/router";
-import { InferGetServerSidePropsType, NextPageContext } from "next";
+import { InferGetServerSidePropsType } from "next";
 import { GetServerSidePropsContext } from "next";
 import ReactMarkdown from "react-markdown";
-import { Asset, EntrySkeletonType } from "contentful";
+import { Asset } from "contentful";
 import remarkGfm from "remark-gfm";
-import rehypekatex from 'rehype-katex'
-import remarkMath from 'remark-math'
+import rehypekatex from "rehype-katex";
+import remarkMath from "remark-math";
 import Link from "../components/atoms/Link";
-import { Blog, BlogSkeleton, blog } from "../../components/contentful/blog";
-import { ObjectEntryResponse } from "../../components/contentful";
+import { blog } from "../../components/contentful/blog";
+import CodeDisplay from "../../components/CodeDisplay";
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
   const { blogId } = context.query;
@@ -19,9 +18,11 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
   return { props: { blogDetails } };
 }
 
-export default function BlogInstance({ blogDetails:blog }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+export default function BlogInstance({
+  blogDetails: blog,
+}: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
-    <div className="container dark:text-white px-4 md:px-0 h-fit mx-auto py-32">
+    <div className="container dark:text-white px-4 md:px-8 h-fit mx-auto py-32">
       <h1 className="text-5xl my-4 md:my-2 text-center font-bold">
         {blog.fields.title}
       </h1>
@@ -33,26 +34,30 @@ export default function BlogInstance({ blogDetails:blog }: InferGetServerSidePro
         <p>{blog.fields.author}</p>
         <p className="opacity-80">
           -{" "}
-          {new Date(blog.fields.dateAndTime as string).toLocaleDateString("en-GB", {
-            weekday: "long",
-            year: "numeric",
-            month: "long",
-            day: "numeric",
-          })}
+          {new Date(blog.fields.dateAndTime as string).toLocaleDateString(
+            "en-GB",
+            {
+              weekday: "long",
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            }
+          )}
         </p>
       </div>
       <div className="markdown">
-          <ReactMarkdown
-            components={{
-              a: (props) => {
-                return <Link href={props.href || "#"}>{props.children}</Link>;
-              },
-            }}
-            remarkPlugins={[remarkGfm, remarkMath]}
-            rehypePlugins={[rehypekatex]}
-          >
-            {blog.fields.blogContent as string}
-          </ReactMarkdown>
+        <ReactMarkdown
+          components={{
+            a: (props) => {
+              return <Link href={props.href || "#"}>{props.children}</Link>;
+            },
+            code: CodeDisplay
+          }}
+          remarkPlugins={[remarkGfm, remarkMath]}
+          rehypePlugins={[rehypekatex]}
+        >
+          {blog.fields.blogContent as string}
+        </ReactMarkdown>
       </div>
     </div>
   );
