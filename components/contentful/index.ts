@@ -11,6 +11,7 @@ import {
 export type CF_Text = EntryFieldTypes.Text;
 export type CF_Date = EntryFieldTypes.Date;
 export type CF_Image = EntryFieldTypes.AssetLink;
+export type CF_TEXT_LIST = EntryFieldTypes.Array<EntryFieldTypes.Symbol<string>>;
 
 const client = createClient({
   accessToken: process.env.CONTENTFUL_KEY || "",

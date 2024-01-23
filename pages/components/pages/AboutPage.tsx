@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 import pictureOfMe from "../../../public/picture-me.png";
 import Link from "../atoms/Link";
 import { opensans } from "../../../fonts";
+import Image from "next/image";
 
 type AboutPageType = {};
 
@@ -56,9 +57,9 @@ const AboutPage = ({}: AboutPageType) => {
             </p>
           </AllText>
           <div className="flex items-center justify-center w-1/3">
-            <img
+            <Image
               className="w-30 h-30 shadow-xl object-cover lg:w-80 lg:h-80 md:w-48 md:h-48 aspect-square border-green-500 border-2 rounded-full mt-2 ml-2 hover:mt-0 hover:ml-0 duration-500"
-              src={pictureOfMe.src}
+              src={pictureOfMe}
               alt="Picture of me"
             />
           </div>
