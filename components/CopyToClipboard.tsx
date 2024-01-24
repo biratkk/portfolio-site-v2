@@ -21,10 +21,12 @@ export default function CopyToClipboard({
   return (
     <Tooltip
       isOpen={isNotifOpen}
+      showArrow
+      offset={-1}
       content="Copied!"
       placement="left"
       classNames={{
-        content:[popupColorClass],
+        content:[popupColorClass, "bg-green-600 text-white text-sm p-1 px-2 rounded-lg shadow-md"],
       }}
     >
       <button
@@ -41,7 +43,7 @@ export default function CopyToClipboard({
           }, 1000);
         }}
         className={
-          "cursor-pointer shadow-md duration-200 bg-green-600 hover:bg-green-700 text-white dark:bg-blue-700 dark:hover:bg-blue-800 rounded-md p-2 " +
+          "cursor-pointer shadow-md duration-200 bg-green-600 hover:bg-green-700 text-white rounded-md p-2 " +
           className
         }
       >
