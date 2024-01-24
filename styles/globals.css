@@ -97,3 +97,7 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
+math {
+  padding-top: 2em;
+}
