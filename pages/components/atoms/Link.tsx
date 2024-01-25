@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import styled from "@emotion/styled";
 import HighlightText from "./HighlightText";
+import NextLink from 'next/link'
 
 type LinkType = {
   children: ReactNode;
@@ -9,11 +10,11 @@ type LinkType = {
 };
 const Link = ({ children, href, newTab }: LinkType) => {
   return (
-    <a href={href} className="" target={newTab ? "_blank" : undefined} rel="noopener noreferrer">
+    <NextLink href={href} className="" target={newTab ? "_blank" : undefined} rel="noopener noreferrer">
       <LinkWrapper>
         <HighlightText>{children}</HighlightText>
       </LinkWrapper>
-    </a>
+    </NextLink>
   );
 };
 
