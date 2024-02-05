@@ -4,7 +4,7 @@ import ReactMarkdown from "react-markdown";
 import { Asset } from "contentful";
 import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
-import Link from "../components/atoms/Link";
+import Link from "../../components/atoms/Link";
 import { blog } from "../../components/contentful/blog";
 import CodeDisplay from "../../components/CodeDisplay";
 import BlogContentMarkdown from "../../components/BlogContentMarkdown";

@@ -4,7 +4,7 @@ import "../styles/particles.scss";
 
 import type { AppProps } from "next/app";
 import { DarkModeContextProvider } from "../context/DarkModeContext";
-import Navbar from "./components/navbar";
+import Navbar from "../components/navbar";
 import { Suspense } from "react";
 import { LoadingPage } from "../components/LoadingPage";
 import Head from "next/head";

@@ -1,9 +1,8 @@
-import { opensans } from "../../fonts";
-import { Blog, BlogSkeleton, blog } from "../../components/contentful/blog";
-import { ObjectEntriesResponse } from "../../components/contentful";
-import { EntrySkeletonType } from "contentful";
 import { InferGetServerSidePropsType } from "next";
 import Link from "next/link";
+import { ObjectEntriesResponse } from "../../components/contentful";
+import { BlogSkeleton, blog } from "../../components/contentful/blog";
+import { opensans } from "../../fonts";
 
 export async function getServerSideProps() {
   const entries = await blog.getEntries({content_type: 'blogPost'});

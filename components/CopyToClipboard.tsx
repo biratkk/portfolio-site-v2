@@ -1,7 +1,6 @@
 import { Tooltip } from "@nextui-org/react";
 import { ButtonHTMLAttributes, DetailedHTMLProps, useState } from "react";
 import { MdContentCopy } from "react-icons/md";
-import { useDarkMode } from "../context/DarkModeContext";
 
 type CopyToClipboardProps = {
   stringToCopy: string;
