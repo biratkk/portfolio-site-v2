@@ -8,6 +8,7 @@ import ExperiencePage from "./components/pages/ExperiencePage";
 import ContactMeFooter from "./components/pages/ContactMeFooter";
 import { InferGetServerSidePropsType } from "next";
 import { projectPreview } from "../components/contentful/projectPreview";
+import { setTimeout } from "timers/promises";
 
 export async function getServerSideProps() {
   const projectEntries = await projectPreview.getEntries({content_type: 'projectPreview'});

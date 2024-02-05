@@ -96,6 +96,7 @@ const Navbar = () => {
                 onClick={() => setMenuShown(false)}
                 href="/blog"
                 scroll={false}
+                prefetch={false}
               >
                 Blog
               </Link>
