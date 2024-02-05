@@ -1,5 +1,5 @@
 import ReactMarkdown from "react-markdown";
-import Link from "../pages/components/atoms/Link";
+import Link from "../components/atoms/Link";
 import CodeDisplay from "./CodeDisplay";
 import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
