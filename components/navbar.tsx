@@ -16,18 +16,6 @@ const Navbar = () => {
 
   const toggleMenuShown = () => setMenuShown((prev) => !prev);
 
-  useEffect(() => {
-    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-      anchor.addEventListener("click", function (e) {
-        e.preventDefault();
-
-        document.querySelector(anchor.getAttribute("href") || "")?.scrollIntoView({
-          behavior: "smooth",
-        });
-      });
-    });
-  }, []);
-
   return (
     <nav className=" z-50 text-black fixed w-screen p-2 ">
       <div className="flex p-2 bg-white outline-1 outline dark:bg-slate-700 dark:outline-slate-500 outline-gray-100 max-h-16 justify-between rounded-md shadow-lg">
@@ -92,7 +80,7 @@ const Navbar = () => {
             </li>
             <li className="my-4 md:my-0 md:ml-4 cursor-pointer dark:text-slate-300 hover:text-green-500 dark:hover:text-green-400">
               <Link
-                onClick={() => setMenuShown(false)}
+                // onClick={() => setMenuShown(false)}
                 href="/blog"
                 scroll={false}
                 prefetch={false}
