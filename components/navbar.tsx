@@ -5,7 +5,6 @@ import DarkModeCheckBox from "./atoms/DarkModeCheckBox";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { useDarkMode } from "../../context/DarkModeContext";
 
 const righteous = Righteous({
   weight: "400",
@@ -16,18 +15,6 @@ const Navbar = () => {
   const [menuShown, setMenuShown] = useState(false);
 
   const toggleMenuShown = () => setMenuShown((prev) => !prev);
-
-  useEffect(() => {
-    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-      anchor.addEventListener("click", function (e) {
-        e.preventDefault();
-
-        document.querySelector(anchor.getAttribute("href") || "")?.scrollIntoView({
-          behavior: "smooth",
-        });
-      });
-    });
-  }, []);
 
   return (
     <nav className=" z-50 text-black fixed w-screen p-2 ">
@@ -93,7 +80,7 @@ const Navbar = () => {
             </li>
             <li className="my-4 md:my-0 md:ml-4 cursor-pointer dark:text-slate-300 hover:text-green-500 dark:hover:text-green-400">
               <Link
-                onClick={() => setMenuShown(false)}
+                // onClick={() => setMenuShown(false)}
                 href="/blog"
                 scroll={false}
                 prefetch={false}
