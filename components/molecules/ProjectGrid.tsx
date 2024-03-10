@@ -7,7 +7,7 @@ type ProjectGridType = {
 };
 const ProjectGrid = ({ projectDetails }: ProjectGridType) => {
   return (
-    <div className="project-grid grid gap-1 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+    <div className="project-grid grid gap-1 grid-cols-1 md:grid-cols-2">
       {projectDetails &&
         projectDetails.items.map((item, idx) => {
           return <ProjectSquare key={idx} {...item.fields} />;

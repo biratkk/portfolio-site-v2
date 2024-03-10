@@ -1,12 +1,9 @@
-import React, { ReactElement, ReactNode } from "react";
 import {
   AiFillFacebook,
   AiFillGithub,
   AiFillLinkedin,
-  AiFillTwitterCircle,
-  AiOutlineDoubleLeft,
-  AiOutlineDoubleRight,
-  AiFillMail
+  AiFillMail,
+  AiFillTwitterCircle
 } from "react-icons/ai";
 import { IconType } from "react-icons/lib";
 export enum Icons {
