@@ -13,8 +13,5 @@ const HighlightText = ({children}:HighlightTextType) => {
   )
 };
 
-const HighlightWrapper = styled.span`
-    color: rgb(34, 197, 94);
-`
 
 export default HighlightText;

@@ -2,7 +2,11 @@ import { GetServerSidePropsContext, InferGetServerSidePropsType } from "next";
 import { blog } from "../../../components/contentful/blog";
 import BlogContentMarkdown from "../../../components/BlogContentMarkdown";
 import { Asset } from "contentful";
-
+import { formatDate } from "../../../util/date";
+import { NextPageWithLayout } from "../../_app";
+import { FaArrowLeft } from "react-icons/fa6";
+import { cn } from "@nextui-org/react";
+import Link from "next/link";
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
   const { blogId } = context.query;
@@ -13,38 +17,50 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
   return { props: { blogDetails } };
 }
 
-export default function BlogInstance({
-  blogDetails: blog,
-}: InferGetServerSidePropsType<typeof getServerSideProps>) {
+const BlogInstance: NextPageWithLayout<
+  InferGetServerSidePropsType<typeof getServerSideProps>
+> = ({ blogDetails: blog }) => {
+  const formattedDate = formatDate(new Date(blog.fields.dateAndTime as string));
   return (
-    <div className="container dark:text-white px-8 md:px-16 lg:px-48 h-fit mx-auto py-32">
-      <h1 className="text-5xl my-4 md:my-2 text-center font-bold">
+    <div className="container mx-auto w-full py-20">
+      <InfoHeader author={blog.fields.author} date={formattedDate} />
+      <h1 className="text-5xl text-center my-8 font-bold">
         {blog.fields.title}
       </h1>
-      <div className="flex items-center justify-center gap-2 my-4">
-        <img
-          src={
-            (blog.fields.authorImage as Asset).fields.file?.url?.toString() ||
-            ""
-          }
-          alt={"Author"}
-          className="w-8 aspect-square rounded-full "
-        />
-        <p>{blog.fields.author}</p>
-        <p className="opacity-80">
-          -{" "}
-          {new Date(blog.fields.dateAndTime as string).toLocaleDateString(
-            "en-GB",
-            {
-              weekday: "long",
-              year: "numeric",
-              month: "long",
-              day: "numeric",
-            }
-          )}
-        </p>
-      </div>
       <BlogContentMarkdown content={blog.fields.blogContent as string} />
+      <InfoHeader placement="below" author={blog.fields.author} date={formattedDate} />
+    </div>
+  );
+};
+
+function InfoHeader({
+  author,
+  date,
+  placement='above'
+}: {
+  author: string;
+  date: string;
+  placement?: "above" | "below";
+}) {
+  return (
+    <div className={cn("flex justify-between items-center border-b border-1 border-black dark:border-white text-sm font-bold", placement === 'below' && "border-t border-b-0")}>
+      <Link
+        href="/blog"
+        className="flex items-center gap-1 text-sm font-bold hover:cursor-pointer"
+      >
+        <FaArrowLeft />
+        All blogs
+      </Link>
+      <div className="flex items-center gap-2">
+        <Link href="/">{author}</Link>
+      </div>
+      <div className="flex text-sm font-bold items-center justify-start gap-2 my-1">
+        <p className="opacity-80">{date} </p>
+      </div>
     </div>
   );
 }
+
+BlogInstance.getLayout = (page) => page;
+
+export default BlogInstance;

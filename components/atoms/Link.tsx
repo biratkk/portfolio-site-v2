@@ -10,19 +10,8 @@ type LinkType = {
 };
 const Link = ({ children, href, newTab }: LinkType) => {
   return (
-<<<<<<< Updated upstream
     <NextLink href={href} className="" target={newTab ? "_blank" : "_self"}>
-      <LinkWrapper>
         <HighlightText>{children}</HighlightText>
-      </LinkWrapper>
-=======
-    <NextLink
-      href={href}
-      className="hover:underline text-green-600 underline-offset-4"
-      target={newTab ? "_blank" : "_self"}
-    >
-      <HighlightText>{children}</HighlightText>
->>>>>>> Stashed changes
     </NextLink>
   );
 };

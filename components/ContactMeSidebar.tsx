@@ -26,7 +26,9 @@ const ContactMeSidebar = ({ children }: ContactMeSidebarType) => {
             unoptimized
           />
         </div>
-        <h1 className="font-semibold mt-2 rounded-r-md">Birat Koirala</h1>
+        <h1 className="font-semibold mt-2 rounded-r-md">
+          Birat Koirala
+        </h1>
         <p className="text-sm mt-1 w-72">
           Software Engineer, studying computer science at{" "}
           <Link href="https://www.leeds.ac.uk/">University of Leeds</Link>.
