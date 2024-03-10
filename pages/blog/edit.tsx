@@ -8,4 +8,3 @@ const Edit:NextPageWithLayout = () => {
 Edit.getLayout = (page) => page;
 
 export default Edit;
-

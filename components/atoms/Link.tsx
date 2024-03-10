@@ -10,7 +10,7 @@ type LinkType = {
 };
 const Link = ({ children, href, newTab }: LinkType) => {
   return (
-    <NextLink href={href} className="hover:underline text-green-500 underline-offset-4" target={newTab ? "_blank" : "_self"}>
+    <NextLink href={href} className="hover:underline text-green-600 underline-offset-4" target={newTab ? "_blank" : "_self"}>
       {/* <LinkWrapper>
       </LinkWrapper> */}
         <HighlightText>{children}</HighlightText>
