@@ -22,13 +22,7 @@ export default function Links(
   return (
     <div {...props} className="w-full flex flex-col mt-2">
       {pages.map((props, idx) => (
-        <Link
-          key={idx}
-          selected={
-            selected.endsWith(props.href)
-          }
-          {...props}
-        />
+        <Link key={idx} selected={props.href === selected} {...props} />
       ))}
     </div>
   );
@@ -45,11 +39,12 @@ function Link({
 }) {
   return (
     <a
-      className={cn(
-        "font-semibold px-2 py-1 -ml-2 border-l border-white dark:border-black hover:border-gray-200 dark:hover:border-gray-800",
-        selected &&
-          "hover:border-gray-600 border-gray-600 dark:hover:border-gray-700 dark:border-gray-700"
-      )}
+      className={`font-semibold px-2 py-1 -ml-2 border-l-2 
+        ${
+          selected
+            ? "hover:border-gray-600 border-gray-600 dark:hover:border-gray-700 dark:border-gray-700"
+            : "border-white dark:border-black hover:border-gray-200 dark:hover:border-gray-800"
+        }`}
       href={href}
     >
       {name}
