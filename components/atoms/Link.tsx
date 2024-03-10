@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import styled from "@emotion/styled";
 import HighlightText from "./HighlightText";
-import NextLink from 'next/link'
+import NextLink from "next/link";
 
 type LinkType = {
   children: ReactNode;
@@ -10,10 +10,19 @@ type LinkType = {
 };
 const Link = ({ children, href, newTab }: LinkType) => {
   return (
+<<<<<<< Updated upstream
     <NextLink href={href} className="" target={newTab ? "_blank" : "_self"}>
       <LinkWrapper>
         <HighlightText>{children}</HighlightText>
       </LinkWrapper>
+=======
+    <NextLink
+      href={href}
+      className="hover:underline text-green-600 underline-offset-4"
+      target={newTab ? "_blank" : "_self"}
+    >
+      <HighlightText>{children}</HighlightText>
+>>>>>>> Stashed changes
     </NextLink>
   );
 };
