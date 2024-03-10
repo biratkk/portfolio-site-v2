@@ -25,8 +25,7 @@ export default function Links(
         <Link
           key={idx}
           selected={
-            selected.endsWith(props.href) ||
-            (!!props.or && selected.endsWith(props.or))
+            selected.endsWith(props.href)
           }
           {...props}
         />

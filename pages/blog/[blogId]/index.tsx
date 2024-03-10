@@ -6,6 +6,7 @@ import { formatDate } from "../../../util/date";
 import { NextPageWithLayout } from "../../_app";
 import { FaArrowLeft } from "react-icons/fa6";
 import { cn } from "@nextui-org/react";
+import Link from "next/link";
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
   const { blogId } = context.query;
@@ -43,15 +44,15 @@ function InfoHeader({
 }) {
   return (
     <div className={cn("flex justify-between items-center border-b border-1 border-black dark:border-white text-sm font-bold", placement === 'below' && "border-t border-b-0")}>
-      <a
+      <Link
         href="/blog"
         className="flex items-center gap-1 text-sm font-bold hover:cursor-pointer"
       >
         <FaArrowLeft />
         All blogs
-      </a>
+      </Link>
       <div className="flex items-center gap-2">
-        <a href="/">{author}</a>
+        <Link href="/">{author}</Link>
       </div>
       <div className="flex text-sm font-bold items-center justify-start gap-2 my-1">
         <p className="opacity-80">{date} </p>
