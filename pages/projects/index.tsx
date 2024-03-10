@@ -19,7 +19,7 @@ export default function Projects({
     <div className="mb-4">
       <div className="flex flex-col gap-10">
         {projectEntries.items.map((entry) => (
-          <Link className="group" href={entry.fields.url}>
+          <Link className="group" target="_blank" href={entry.fields.url}>
             <p className="text-xs text-green-700 font-bold">
               {formatDate(new Date(entry.fields.date))}
             </p>
