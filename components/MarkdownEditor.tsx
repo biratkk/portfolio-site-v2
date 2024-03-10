@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import useLocalStorage from "../hooks/useLocalStorage";
 import BlogContentMarkdown from "./BlogContentMarkdown";
 import CopyToClipboard from "./CopyToClipboard";
+import { NextPageWithLayout } from "../pages/_app";
 
 type MarkdownEditorType = {
   id: string;
@@ -11,11 +12,11 @@ type MarkdownEditorType = {
   onSubmit?: (s: string) => void;
 };
 
-export default function MarkdownEditor({
+const MarkdownEditor:React.FC<MarkdownEditorType> = ({
   id,
   onSubmit,
   initialText,
-}: MarkdownEditorType) {
+}) => {
   const { item, setter } = useLocalStorage<string>(id);
 
   useEffect(() => {
@@ -50,3 +51,5 @@ export default function MarkdownEditor({
     </div>
   );
 }
+
+export default MarkdownEditor;

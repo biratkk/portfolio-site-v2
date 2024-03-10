@@ -6,12 +6,9 @@ type HighlightTextType = {
 }
 const HighlightText = ({children}:HighlightTextType) => {
   return (
-    <HighlightWrapper>{children}</HighlightWrapper>
+    <div className="text-green-600">{children}</div>
   )
 };
 
-const HighlightWrapper = styled.span`
-    color: rgb(34, 197, 94);
-`
 
 export default HighlightText;
