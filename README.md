@@ -46,12 +46,6 @@ My portfolio site showcases my journey as a software engineer. It highlights my 
 <!-- ABOUT THE PROJECT -->
 
 ## About The Project
-<div align="center">
- <a href="https://github.com/biratkk/portfolio-site-v2">
-    <img src="public/site-pic.png" alt="Logo" width="70%" style="border-radius:10px;">
-  </a>
-  <br>
-
 This site was built with the following technologies and is hosted on [Vercel](https://vercel.app/).
 
 [![Next][Next.js]][Next-url]
