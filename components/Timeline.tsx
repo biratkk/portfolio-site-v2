@@ -7,11 +7,11 @@ export default function Timeline(
   }
 ) {
   return (
-    <div className="flex flex-col gap-12 border-l-4 border-gray-100 pl-6">
+    <div className="flex flex-col gap-12 border-l-4 border-gray-200 dark:border-slate-800 pl-6">
       {props.children.map((child) => (
         <div className="flex items-center">
           <div className="relative">
-            <span className="absolute right-[1.15em] bg-white w-4 h-4 border rounded-full"></span>
+            <span className="absolute right-[1.15em] bg-white dark:bg-slate-500 w-4 h-4 border rounded-full"></span>
           </div>
           {child}
         </div>
@@ -22,11 +22,11 @@ export default function Timeline(
 
 export function TimelineItem({
   date,
-  title,
+  name,
   description,
 }: {
   date: Date;
-  title: string;
+  name: string;
   description: string;
 }) {
   return (
@@ -34,7 +34,7 @@ export function TimelineItem({
       <span className="text-sm font-bold text-green-700">
         {formatDateMonthYear(date)}
       </span>
-      <h2 className="text-2xl font-semibold ">{title}</h2>
+      <h2 className="text-2xl font-semibold ">{name}</h2>
       <p className="">{description}</p>
     </div>
   );

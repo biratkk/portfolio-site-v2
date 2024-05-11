@@ -18,8 +18,7 @@ export default function Projects({
         {timelineEventDetails.items.sort((a, b) => Date.parse(b.fields.startDate) - Date.parse(a.fields.startDate)).map((event, idx) => (
           <TimelineItem
             key={idx}
-            title={event.fields.name}
-            description={event.fields.description}
+            {...event.fields}
             date={new Date(event.fields.startDate)}
           />
         ))}
