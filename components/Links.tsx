@@ -8,6 +8,10 @@ const pages = [
     href: "/blog",
   },
   {
+    name: "Experience",
+    href: "/timeline"
+  },
+  {
     name: "Projects",
     href: "/projects",
   },

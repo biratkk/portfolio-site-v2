@@ -1,10 +1,7 @@
 import { InferGetServerSidePropsType } from "next";
-import { projectPreview } from "../../components/contentful/projectPreview";
-import ProjectGrid from "../../components/molecules/ProjectGrid";
-import { formatDate } from "../../util/date";
-import Pill from "../../components/Pill";
-import { FaExternalLinkAlt } from "react-icons/fa";
 import Link from "next/link";
+import { projectPreview } from "../../components/contentful/projectPreview";
+import { formatDate } from "../../util/date";
 export async function getServerSideProps() {
   const projectEntries = await projectPreview.getEntries({
     content_type: "projectPreview",
