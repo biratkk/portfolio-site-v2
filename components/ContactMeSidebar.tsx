@@ -32,8 +32,6 @@ const ContactMeSidebar = ({ children }: ContactMeSidebarType) => {
         <p className="text-sm mt-1 w-72">
           Software Engineer at{" "}
           <Link href="https://aws.amazon.com/">AWS</Link>.{" "}
-          Studied computer science at{" "}
-          <Link href="https://www.leeds.ac.uk/">University of Leeds</Link>.
           Interested in software development, design, graphics and education.
         </p>
         <div className="mt-2 gap-2 text-sm flex">
