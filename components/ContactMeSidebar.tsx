@@ -30,7 +30,9 @@ const ContactMeSidebar = ({ children }: ContactMeSidebarType) => {
           Birat Koirala
         </h1>
         <p className="text-sm mt-1 w-72">
-          Software Engineer, studying computer science at{" "}
+          Software Engineer at{" "}
+          <Link href="https://aws.amazon.com/">AWS</Link>.{" "}
+          Studied computer science at{" "}
           <Link href="https://www.leeds.ac.uk/">University of Leeds</Link>.
           Interested in software development, design, graphics and education.
         </p>
