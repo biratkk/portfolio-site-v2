@@ -31,7 +31,7 @@ const ContactMeSidebar = ({ children }: ContactMeSidebarType) => {
         </h1>
         <p className="text-sm mt-1 w-72">
           Software Engineer at{" "}
-          <Link href="https://aws.amazon.com/">AWS</Link>.{" "}
+          <Link href="https://www.aboutamazon.co.uk/">Amazon</Link>.{" "}
           Interested in software development, design, graphics and education.
         </p>
         <div className="mt-2 gap-2 text-sm flex">
