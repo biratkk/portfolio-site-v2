@@ -15,6 +15,10 @@ const pages = [
     name: "Projects",
     href: "/projects",
   },
+  {
+    name: "Art",
+    href: "/art"
+  }
 ];
 
 export default function Links(
