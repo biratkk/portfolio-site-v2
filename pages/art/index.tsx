@@ -22,7 +22,7 @@ export default function Art({
         <div className="mb-4">
             <div className="flex flex-col gap-4">
                 <h1 className="font-bold text-3xl border-b">Poems</h1>
-                <div className="flex md:justify-start justify-center gap-4">
+                <div className="flex flex-wrap md:justify-start justify-center gap-4">
                     {poems?.items.map((entry, idx) => (
                         <Link href={`/art/poem/${entry.sys.id}`}>
                             <div className="w-96 h-fit border rounded-sm overflow-hidden group cursor-pointer">
